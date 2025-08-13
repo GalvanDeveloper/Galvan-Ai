@@ -17,7 +17,7 @@
 .galvan-prompt-container {
     
 /* Make the panel mostly transparent to let the backdrop show through */
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0);
           
         
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -48,7 +48,7 @@
     content: '';
     
             /* Make the panel mostly transparent to let the backdrop show through */
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0);
           
         
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -87,7 +87,7 @@
   border-radius: inherit; /* Always matches the animated container */
   
             /* Make the panel mostly transparent to let the backdrop show through */
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0);
           
         
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -550,8 +550,8 @@ body.command-bar-expanded .galvan-toast-message {
     max-width: 300px;
     z-index: 50;
     border-radius: 34px; 
-    background: rgba(255, 255, 255, 0.05);
-   
+    background: rgba(255, 255, 255, 0);
+   border:5px solid rgba(225, 225, 225, 0.05);
  
     backdrop-filter: blur(5px) url(#liquid-refraction);
     -webkit-backdrop-filter: blur(5px) url(#liquid-refraction);
@@ -564,6 +564,7 @@ body.command-bar-expanded .galvan-toast-message {
                 transform 0.7s var(--ease-out-quint) var(--galvan-command-bar-entry-animation-delay);
     height: calc(var(--galvan-command-bar-height-normal) + var(--safe-bottom));
     overflow: hidden;
+   
     will-change: height, transform, opacity, border-radius;
     display: flex;
     flex-direction: column;
@@ -576,7 +577,7 @@ body.app-loaded .galvan-command-bar-container {
 .galvan-command-bar-container.expanded {
     height: calc(var(--command-bar-expanded-height) + var(--safe-bottom));
     border-radius: 38px;
-    border-top-right-radius: 15px;
+    border-top-right-radius: 25px;
 }
 .galvan-command-bar-expanded-content-wrapper {
     opacity: 0;
@@ -648,7 +649,7 @@ body.app-loaded .galvan-command-bar-container {
     border: none;
     color: var(--current-icon-primary);
     cursor: pointer;
-    padding: 4px;
+    padding: ;
     border-radius: 20px;
     transition: all 0.25s var(--ease-out-quint);
     position: relative;
@@ -665,8 +666,8 @@ body.app-loaded .galvan-command-bar-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
 }
 .galvan-nav-btn .icon-wrapper > svg {
     position: absolute;
@@ -761,7 +762,7 @@ body.app-loaded .galvan-command-bar-container {
 .galvan-command-bar-container.expanded .galvan-command-bar-expanded-top-nav {
     opacity: 1;
     transform: translateY(0);
-    transition-delay: 0.15s;
+    transition-delay: 1.35s;
 }
 .galvan-command-bar-expanded-top-nav .galvan-nav-btn {
     opacity: 0;
@@ -823,9 +824,7 @@ body:not(.light-mode) #theme-toggle-btn-cloned .icon-moon {
     .user-message .galvan-message-bubble {
    
             /* Make the panel mostly transparent to let the backdrop show through */
-           
-            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
-            
+             
             /* The core of the effect: blur + SVG filter URL */
             
  color:var(--current-icon-primary);
@@ -1181,7 +1180,7 @@ body:not(.light-mode) #theme-toggle-btn-cloned .icon-moon {
         
         --galvan-command-bar-margin-bottom: 10px; /* MODIFIED: Gap reduction */
         --galvan-command-bar-horizontal-padding: 16px;
-        --galvan-command-bar-height-normal: 64px; 
+        --galvan-command-bar-height-normal: 74px; 
         --galvan-command-bar-height-expanded: 630px; 
         --galvan-command-bar-border-radius: 32px; 
         --galvan-command-bar-expanded-top-nav-height: 58px;
@@ -1225,16 +1224,16 @@ body:not(.light-mode) #theme-toggle-btn-cloned .icon-moon {
         --galvan-icon-static-light: #6B7280;
         --galvan-user-msg-bg-light: linear-gradient(135deg, #3B82F6, #2563EB);
         --galvan-bot-msg-bg-light: #F3F4F6;
-        --galvan-logo-stop-1-light: #c1f63bbc;
+        --galvan-logo-stop-1-light: #001dffbc;
         --galvan-logo-stop-2-light: #06a5c5;
-        --galvan-logo-stop-3-light: #34D399;
+        --galvan-logo-stop-3-light: #34d334;
         --galvan-logo-glow-color-light: #60fa9e;
         --galvan-wave-color-light: rgba(59, 130, 246, 0.08);
-        --galvan-logo-blur-grad-light: radial-gradient(circle at 20% 80%, hsla(223, 100%, 50%, 0.727), transparent 45%), radial-gradient(circle at 80% 30%, hsl(76, 100%, 50%), transparent 45%);
+        --galvan-logo-blur-grad-light: radial-gradient(circle at 20% 80%, hsla(218, 100%, 50%, 0.727), transparent 45%), radial-gradient(circle at 80% 30%, hsla(206, 100%, 50%, 0.848), transparent 45%);
         --galvan-greeting-grad-light: linear-gradient(120deg, #1D4ED8, #3B82F6);
 
         /* [NEW] Galvan Default Palette (Dark) */
-        --galvan-body-bg-dark: #030f46;
+        --galvan-body-bg-dark: #00287d;
         --galvan-bg-primary-dark: #111827;
         --galvan-bg-secondary-dark: #1F2937;
         --galvan-bg-tertiary-dark: #374151;
@@ -1242,17 +1241,17 @@ body:not(.light-mode) #theme-toggle-btn-cloned .icon-moon {
         --galvan-text-secondary-dark: #D1D5DB;
         --galvan-text-placeholder-dark: #9CA3AF;
         --galvan-border-color-dark: #4a4c4f;
-        --galvan-icon-primary-dark: #60A5FA;
+        --galvan-icon-primary-dark: #9ec9fd;
         --galvan-icon-active-dark: #93C5FD;
         --galvan-icon-static-dark: #eff5ff;
         --galvan-user-msg-bg-dark: linear-gradient(135deg, #2563EB, #3B82F6);
         --galvan-bot-msg-bg-dark: #374151;
-        --galvan-logo-stop-1-dark: #c1f63bbc;
+        --galvan-logo-stop-1-dark: #001dffbc;
         --galvan-logo-stop-2-dark: #06a5c5;
-        --galvan-logo-stop-3-dark: #34D399;
+        --galvan-logo-stop-3-dark: #34d334;
         --galvan-logo-glow-color-dark: #60A5FA;
         --galvan-wave-color-dark: rgba(96, 165, 250, 0.07);
-       --galvan-logo-blur-grad-dark: radial-gradient(circle at 20% 80%, hsla(138, 100%, 50%, 0.916), transparent 45%), radial-gradient(circle at 80% 30%, hsl(201, 100%, 50%), transparent 45%);
+       --galvan-logo-blur-grad-dark: radial-gradient(circle at 20% 80%, hsl(107, 100%, 50%), transparent 45%), radial-gradient(circle at 80% 30%, hsl(201, 100%, 50%), transparent 45%);
         --galvan-greeting-grad-dark: linear-gradient(120deg, #1D4ED8, #3B82F6);
         /* Base Theme Colors - Light Mode (Can be overridden by palettes) */
         --app-body-bg-light: var(--galvan-body-bg-light);
@@ -1268,7 +1267,7 @@ body:not(.light-mode) #theme-toggle-btn-cloned .icon-moon {
         --app-icon-static-light: var(--galvan-icon-static-light);
         --app-shadow-color-light: rgba(76, 81, 191, 0.07);
         --app-shadow-strong-light: rgba(76, 81, 191, 0.12);
-        --app-error-text-light: #E53E3E;
+        --app-error-text-light: #ff0000;
         --app-link-color-light: var(--galvan-icon-active-light);
         --app-toast-bg-light: rgba(17, 24, 39, 0.92);
         --app-toast-text-light: #F9FAFB;
@@ -1284,8 +1283,8 @@ body:not(.light-mode) #theme-toggle-btn-cloned .icon-moon {
         --app-logo-stop-2-light: var(--galvan-logo-stop-2-light);
         --app-logo-stop-3-light: var(--galvan-logo-stop-3-light);
         --app-logo-glow-color-light: var(--galvan-logo-glow-color-light);
-        --app-switch-bg-light: #D1D5DB;
-        --app-switch-thumb-light: #FFFFFF;
+        --app-switch-bg-light: #ffffff;
+        --app-switch-thumb-light: #ffffff;
      
         --app-wave-color-light: var(--galvan-wave-color-light);
         --app-font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -1306,7 +1305,7 @@ body:not(.light-mode) #theme-toggle-btn-cloned .icon-moon {
         --app-icon-static-dark: var(--galvan-icon-static-dark);
         --app-shadow-color-dark: rgba(0, 0, 0, 0.30);
         --app-shadow-strong-dark: rgba(0, 0, 0, 0.45);
-        --app-error-text-dark: #F87171;
+        --app-error-text-dark: #ff0000;
         --app-link-color-dark: #93C5FD;
         --app-toast-bg-dark: rgba(249, 250, 251, 0.92);
         --app-toast-text-dark: #1F2937;
@@ -1322,8 +1321,8 @@ body:not(.light-mode) #theme-toggle-btn-cloned .icon-moon {
         --app-logo-stop-2-dark: var(--galvan-logo-stop-2-dark);
         --app-logo-stop-3-dark: var(--galvan-logo-stop-3-dark);
         --app-logo-glow-color-dark: var(--galvan-logo-glow-color-dark);
-        --app-switch-bg-dark: #4B5563;
-        --app-switch-thumb-dark: #111827;
+        --app-switch-bg-dark: #ffffff;
+        --app-switch-thumb-dark: #ffffff;
       
         --app-wave-color-dark: var(--galvan-wave-color-dark);
         --app-greeting-grad-dark: var(--galvan-greeting-grad-dark);
@@ -1364,7 +1363,7 @@ body:not(.light-mode) #theme-toggle-btn-cloned .icon-moon {
         --current-logo-stop-3: var(--app-logo-stop-3-light);
         --current-logo-glow-color: var(--app-logo-glow-color-light);
         --current-suggestion-grad-idle: linear-gradient(135deg, var(--app-bg-primary-light), color-mix(in srgb, var(--app-bg-secondary-light) 80%, var(--app-bg-primary-light)));
-        --current-suggestion-grad-active: linear-gradient(135deg, color-mix(in srgb, var(--app-icon-active-light) 5%, var(--app-bg-primary-light)), color-mix(in srgb, var(--app-icon-active-light) 15%, var(--app-bg-secondary-light)));
+        --current-suggestion-grad-active: linear-gradient(135deg, color-mix(in srgb, #002fff 5%, #e8ffc2), color-mix(in srgb, var(--app-icon-active-light) 15%, var(--app-bg-secondary-light)));
         --current-internal-animated-grad: linear-gradient(120deg, rgba(173, 216, 230, 0.55), rgba(144, 238, 144, 0.55), rgba(255, 255, 224, 0.6), rgba(255, 192, 203, 0.55), rgba(173, 216, 230, 0.55));
         --current-switch-bg: var(--app-switch-bg-light);
         --current-switch-bg-active: var(--app-icon-active-light);
@@ -1447,7 +1446,7 @@ body:not(.light-mode) #theme-toggle-btn-cloned .icon-moon {
         --current-prompt-focus-shadow: color-mix(in srgb, var(--app-icon-active-light) 20%, transparent);
         --current-prompt-border-color: var(--app-border-color-light);
         --current-suggestion-grad-idle: linear-gradient(135deg, var(--app-bg-primary-light), color-mix(in srgb, var(--app-bg-secondary-light) 80%, var(--app-bg-primary-light)));
-        --current-suggestion-grad-active: linear-gradient(135deg, color-mix(in srgb, var(--app-icon-active-light) 5%, var(--app-bg-primary-light)), color-mix(in srgb, var(--app-icon-active-light) 15%, var(--app-bg-secondary-light)));
+        --current-suggestion-grad-active: linear-gradient(135deg, color-mix(in srgb, #002fff 5%, #e8ffc2), color-mix(in srgb, var(--app-icon-active-light) 15%, var(--app-bg-secondary-light)));
         --current-wave-color: var(--app-wave-color-light);
         --current-greeting-grad: var(--app-greeting-grad-light);
         --current-suggestion-swipe-send-bg: var(--app-like-color-light);
@@ -1503,7 +1502,7 @@ body:not(.light-mode) #theme-toggle-btn-cloned .icon-moon {
         --current-prompt-focus-shadow: color-mix(in srgb, var(--app-icon-active-dark) 20%, transparent);
         --current-prompt-border-color: var(--app-border-color-dark);
         --current-suggestion-grad-idle: linear-gradient(135deg, var(--app-bg-primary-dark), color-mix(in srgb, var(--app-bg-secondary-dark) 80%, var(--app-bg-primary-dark)));
-        --current-suggestion-grad-active: linear-gradient(135deg, color-mix(in srgb, var(--app-icon-active-dark) 5%, var(--app-bg-primary-dark)), color-mix(in srgb, var(--app-icon-active-dark) 15%, var(--app-bg-secondary-dark)));
+        --current-suggestion-grad-active: linear-gradient(135deg, color-mix(in srgb, #0078ff 5%, #035759), color-mix(in srgb, var(--app-icon-active-dark) 15%, var(--app-bg-secondary-dark)));
         --current-wave-color: var(--app-wave-color-dark);
         --current-greeting-grad: var(--app-greeting-grad-dark);
         --current-suggestion-swipe-send-bg: var(--app-like-color-dark);
@@ -1829,19 +1828,25 @@ body.chats-active .galvan-vv-structure-container {
     .galvan-welcome-screen.has-user-name .galvan-suggestions-wrapper {
         top: calc(var(--galvan-suggestions-top-offset) + 40px);
     }
-    body.chats-active .galvan-suggestions-wrapper, body.hide-suggestions .galvan-suggestions-wrapper, body.adding-suggestion-chip .galvan-suggestions-wrapper { opacity: 0; visibility: hidden; pointer-events: none;  }
+    body.chats-active .galvan-suggestions-wrapper, body.hide-suggestions .galvan-suggestions-wrapper, body.adding-suggestion-chip .galvan-suggestions-wrapper { opacity: 0; visibility: hidden;   background: rgba(255, 255, 255, 0);
+          
+        }
+            
 
    .galvan-suggestions {
         width: 100%; max-width: 300px; margin: 0 auto; flex-grow: 1; overflow-y: auto;
         padding: 30px 12px calc(15px + var(--safe-bottom)) 12px;
            /* Make the panel mostly transparent to let the backdrop show through */
-            background: rgba(255, 255, 255, 0.05);
-      
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 5px solid rgba(255, 255, 255, 0.062);
            
-            /* The core of the effect: blur + SVG filter URL */
-            backdrop-filter:blur(15px);
-            
+               background: rgba(255, 255, 255, 0);
+          
+        
+             backdrop-filter: blur(5px) url(#liquid-refraction);
+            -webkit-backdrop-filter: blur(5px) url(#liquid-refraction);
+
+           
+       
         border-top-left-radius:45px; 
         border-top-right-radius: 45px;
         mask-image: linear-gradient(to bottom, black calc(100% - 70px), transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black calc(100% - 70px), transparent 100%);
@@ -1953,14 +1958,15 @@ body.command-bar-expanded .galvan-prompt-form {
 
     .galvan-message-content { display: flex; flex-direction: column; width: 100%; }
     .galvan-message-bubble {
-        padding: 14px 18px; border-radius: 22px; word-wrap: break-word;
+        padding: 14px 18px; border-radius: 22px; 
     }
     .user-message .galvan-message-bubble {
      color:var(--current-icon-primary);
      
           
         cursor: grab;
-        border-radius:30px;
+        border-bottom-left-radius:10px;
+        
     }
     .user-message .galvan-message-bubble:active { cursor: grabbing;border-radius: 30px;}
 
@@ -1970,8 +1976,7 @@ body.command-bar-expanded .galvan-prompt-form {
             background: rgba(255, 255, 255, 0.05);
       
             border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
-            
+           
             /* The core of the effect: blur + SVG filter URL */
             backdrop-filter: blur(5px) url(#liquid-refraction);
             -webkit-backdrop-filter: blur(5px) url(#liquid-refraction);
@@ -2173,7 +2178,7 @@ body.command-bar-expanded .galvan-prompt-form {
         max-width:300px;
     }
     .galvan-file-upload-wrapper.active {
-        display: flex;align-items:center;justify-content:center;   background: rgba(255, 255, 255, 0.05);
+        display: flex;align-items:center;justify-content:space-around;   background: rgba(255, 255, 255, 0.05);
           
         
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -2314,8 +2319,7 @@ body.command-bar-expanded .galvan-prompt-form {
     .galvan-command-bar-settings-list { gap: 0; padding-right: 15px; }
     .galvan-command-bar-setting-item {
         display: flex; align-items: center; justify-content: space-between;
-        padding: 14px 0; 
-        border-bottom: 1px solid var(--current-border-color);
+        padding: 15px 0; 
         color: var(--current-text-secondary);
     }
     .galvan-command-bar-setting-item:last-child { border-bottom: none; }
@@ -2323,7 +2327,7 @@ body.command-bar-expanded .galvan-prompt-form {
     
     .galvan-setting-action-button {
         background: var(--current-bg-tertiary); color: var(--current-icon-primary);
-       border:none; padding: 6px 12px; 
+       border:none; padding: 10px 60px; 
         border-radius: 512px; font-size: 0.85rem; font-weight: 500;
         cursor: pointer;
         transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.2s var(--ease-spring-gentle);
@@ -2402,16 +2406,16 @@ body.command-bar-expanded .galvan-prompt-form {
         top: 50%;
         transform: translateY(-50%);
         font-size: 14px;
-        color: white;
+        color: rgb(255, 255, 255);
         transition: opacity 0.3s;
     }
     .galvan-switch .slider .icon-toggle-on {
         right: 5px; opacity: 0;
-        color:white;
+        color:rgb(255, 253, 253);
     }
     .galvan-switch .slider .icon-toggle-off {
         left: 5px; opacity: 1;
-        color: white;
+        color: rgb(255, 255, 255);
     }
     .galvan-switch input:checked + .slider { background-color: var(--current-switch-bg-active); }
     .galvan-switch input:focus-visible + .slider { box-shadow: 0 0 0 3px color-mix(in srgb, var(--current-switch-bg-active) 30%, transparent); }
@@ -2464,24 +2468,36 @@ body.command-bar-expanded .galvan-prompt-form {
     }
     .galvan-history-action-btn:active { transform: scale(0.95); }
     #history-clear-all-btn { color: var(--current-error-text);
-    background: rgb(235 13 13 / 9%);
+    background: rgba(235, 13, 13, 0.286);
     border-radius: 150px;
-    border: 1px solid red; }
-    #history-clear-all-btn:hover { border-color: var(--current-error-text); background-color: color-mix(in srgb, var(--current-error-text) 10%, transparent); }
+    margin-top:10px;
+    
+          
+        
+            border: 1px solid rgb(255, 255, 255);
+             /* The core of the effect: blur + SVG filter URL */
+            backdrop-filter: blur(2px) url(#liquid-refraction);
+            -webkit-backdrop-filter: blur(2px) url(#liquid-refraction);
+    border: 3px solid red; }
+    #history-clear-all-btn:hover { border-color: var(--current-error-text); background-color: color-mix(in srgb, var(--current-error-text) 10%, transparent);transform:scale(0.8); }
 
     .galvan-history-date-header {
         font-size: 0.8rem;
         font-weight: 600;
+      
         color: var(--current-text-secondary);
         padding: 18px 0 17px 5px;
         text-transform: uppercase;
         letter-spacing: 0.05em;
+        border-radius: 50px;
+       
+
         position: sticky;
         top: -3px; /* Stick just below the top padding */
-        background: rgba(255, 255, 255, 0.238);
+        background: rgba(255, 255, 255, 0.114);
           
         
-            border: 1px solid rgba(255, 255, 255, 0.289);
+            border: 1px solid rgb(255, 255, 255);
              /* The core of the effect: blur + SVG filter URL */
             backdrop-filter: blur(2px) url(#liquid-refraction);
             -webkit-backdrop-filter: blur(2px) url(#liquid-refraction);
@@ -2489,7 +2505,7 @@ text-align:center;
     border:var(--current-text-secondary);
     margin-bottom:10px;
     margin-top:10px;
-        border-radius:30px;
+    
         z-index: 1;
     }
 
@@ -2587,7 +2603,8 @@ text-align:center;
         font-size: 1.25rem; 
         color: var(--current-text-primary); 
         margin-bottom: 12px; padding-bottom: 10px; 
-        border-bottom: 1px dashed var(--current-border-color);
+ 
+        border-bottom: 5px solid rgba(255, 255, 255, 0.042);
     }
     .galvan-notice-version-group ul { list-style-type: disc; padding-left: 20px; font-size: 0.95rem; color: var(--current-text-secondary); } /* MODIFIED: Notice style */
     .galvan-notice-version-group li { margin-bottom: 10px; line-height: 1.55; padding-left: 8px; } /* MODIFIED: Notice style */
@@ -2597,12 +2614,15 @@ text-align:center;
     .galvan-notice-list-view-header {
         font-size: 1.5rem;
         font-weight: 600;
+    
         color: var(--current-text-primary);
         padding-bottom: 15px;
         margin-bottom: 15px;
-        border-bottom: 1.5px solid var(--current-border-color);
+        border-bottom: 7px solid rgba(255, 255, 255, 0.082);
         text-align: center;
         flex-shrink: 0;
+        position:sticky;
+        z-index:1;
     }
     
     .galvan-color-palette-setting-item { 
@@ -2623,15 +2643,11 @@ text-align:center;
     }
     .galvan-color-palette-item {
        /* Make the panel mostly transparent to let the backdrop show through */
-            background: rgba(255, 255, 255, 0.05);
-          
-        
-            border: 1px solid rgba(255, 255, 255, 0.2);
             
-            /* The core of the effect: blur + SVG filter URL */
-            backdrop-filter: blur(25px) url(#liquid-refraction);
-            -webkit-backdrop-filter: blur(25px) url(#liquid-refraction);
-
+           border:3px solid transparent;
+            border-color: var(--current-icon-active);
+            background:rgba(225, 225, 225, 0);
+            
         
          border-radius:100px;
         margin-left:10px;
@@ -2663,7 +2679,7 @@ text-align:center;
     color: #ffffff00;
     margin-left: auto;
     margin-bottom: 2px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+   
     }
     .galvan-palette-preview-wrapper .preview-bubble {
        width: 55%;
@@ -3459,7 +3475,7 @@ text-align:center;
     let messageCounter = 0;
     let vvSelectedImageData = null; 
     let vvIsEditing = false; 
-    const CURRENT_APP_VERSION_FOR_NOTICE = "Galvan Ui 8.5";
+    const CURRENT_APP_VERSION_FOR_NOTICE = "Galvan Ui 9";
     let currentThemeIsLight = true;
     let activecommandBarView = null; 
     let activecommandBarMainButtonOpener = null; 
@@ -3521,27 +3537,27 @@ text-align:center;
     const COLOR_PALETTES = [
         { 
             id: 'galvan', name: '', isDefault: true,
-            preview: { bg: 'rgb(212 255 205)', bubble: 'linear-gradient(135deg, #007cff, #e8ff00)', accent1: '#3b1dd8', accent2: '#b9bc29' }
+            preview: { bg: 'rgb(0 60 255 / 18%)', bubble: 'linear-gradient(135deg, #007cff, #061599)', accent1: '#3b1dd8', accent2: '#0023af' }
         },
         {
             id: 'cosmic_latte', name: '',
             light: {
-                appBodyBg: '#FDFCF7', appBgPrimary: '#FFFFFF', appBgSecondary: '#F5F2E9', appBgTertiary: '#EAE5D9',
-                appTextPrimary: '#4E342E', appTextSecondary: '#795548', appTextPlaceholder: '#A1887F',
-                appBorderColor: '#D7CCC8', appIconPrimary: '#FF9800', appIconActive: '#E65100', appIconStatic: '#BCAAA4',
+                appBodyBg: '#f8dfdf', appBgPrimary: '#f6e4e4', appBgSecondary: '#ff0000', appBgTertiary: '#ffffff',
+                appTextPrimary: 'e61111', appTextSecondary: '#795548', appTextPlaceholder: '#A1887F',
+               appBorderColor: '#54504D', appIconPrimary: '#ff2a00', appIconActive: '#ff0000', appIconStatic: '#ff2a00',
                 appUserMsgBg: 'linear-gradient(135deg, #ff4d4d, #ff9800)', appBotMsgBg: '#F5F2E9',
-                appLogoStop1: '#FFB74D', appLogoStop2: '#FF7043', appLogoStop3: '#795548', appLogoGlowColor: '#FFCC80',
+                appLogoStop1: '#ff0000', appLogoStop2: '#f27474', appLogoStop3: '#ff4800', appLogoGlowColor: '#FFCC80',
                 appWaveColor: 'rgba(255, 152, 0, 0.07)', appGreetingGrad: 'linear-gradient(120deg, #FF9800, #E65100)'
             },
             dark: {
-                appBodyBg: '#1C1B1A', appBgPrimary: '#2E2B27', appBgSecondary: '#3E3A36', appBgTertiary: '#4E4A45',
+                appBodyBg: '', appBgPrimary: '#05125e', appBgSecondary: '#3E3A36', appBgTertiary: '#4E4A45',
                 appTextPrimary: '#ECEFF1', appTextSecondary: '#CFD8DC', appTextPlaceholder: '#90A4AE',
                 appBorderColor: '#54504D', appIconPrimary: '#FFCC80', appIconActive: '#FFAB40', appIconStatic: '#B0BEC5',
                 appUserMsgBg: 'linear-gradient(135deg, #FFA726, #F57C00)', appBotMsgBg: '#3E3A36',
-                appLogoStop1: '#FFB74D', appLogoStop2: '#FF8A65', appLogoStop3: '#FFD180', appLogoGlowColor: '#FFAB40',
+                appLogoStop1: '#ff0000', appLogoStop2: '#f27474', appLogoStop3: '#ff4800', appLogoGlowColor: '#FFAB40',
                 appWaveColor: 'rgba(255, 171, 64, 0.08)', appGreetingGrad: 'linear-gradient(120deg, #FFCC80, #FFAB40)'
             },
-            preview: { bg: 'rgb(91 4 4)', bubble: 'linear-gradient(135deg, #ff4d4d, #ff9800)', accent1: '#E65100', accent2: '#795548' }
+            preview: { bg: 'rgb(91 4 4 / 27%)', bubble: 'linear-gradient(135deg, #ff4d4d, #c80000)', accent1: '#e65100a8', accent2: '#ff4400' }
         },
         {
             id: 'oceanic_deep', name: '',
@@ -3550,7 +3566,7 @@ text-align:center;
                 appTextPrimary: '#004D40', appTextSecondary: '#00695C', appTextPlaceholder: '#4DB6AC',
                 appBorderColor: '#B2DFDB', appIconPrimary: '#00838F', appIconActive: '#006064', appIconStatic: '#80DEEA',
                 appUserMsgBg: 'linear-gradient(135deg, #26A69A, #00838F)', appBotMsgBg: '#E0F7FA',
-                appLogoStop1: '#4DD0E1', appLogoStop2: '#4DB6AC', appLogoStop3: '#80DEEA', appLogoGlowColor: '#4DD0E1',
+                appLogoStop1: '#00b7ff', appLogoStop2: '#97e0fd', appLogoStop3: '#00b7ff', appLogoGlowColor: '#4DD0E1',
                 appWaveColor: 'rgba(0, 131, 143, 0.09)', appGreetingGrad: 'linear-gradient(120deg, #00838F, #006064)'
             },
             dark: {
@@ -3561,27 +3577,27 @@ text-align:center;
                 appLogoStop1: '#4DD0E1', appLogoStop2: '#80DEEA', appLogoStop3: '#29B6F6', appLogoGlowColor: '#80DEEA',
                 appWaveColor: 'rgba(77, 208, 225, 0.07)', appGreetingGrad: 'linear-gradient(120deg, #4DD0E1, #80DEEA)'
             },
-            preview: { bg: '#012A4A', bubble: 'linear-gradient(135deg, #29B6F6, #0277BD)', accent1: '#4DD0E1', accent2: '#29B6F6' }
+            preview: { bg: 'rgb(0 82 146 / 41%)', bubble: 'linear-gradient(135deg, #29B6F6, #006794)', accent1: '#2fd5ea9e', accent2: '#0075aa' }
         },
         {
             id: 'evergreen', name: '',
             light: {
-                appBodyBg: '#F1F8E9', appBgPrimary: '#FFFFFF', appBgSecondary: '#FAFCF7', appBgTertiary: '#E8F5E9',
+                appBodyBg: '#d6ffcf', appBgPrimary: '#FFFFFF', appBgSecondary: '#22ff00', appBgTertiary: '#22ff00',
                 appTextPrimary: '#33691E', appTextSecondary: '#558B2F', appTextPlaceholder: '#9CCC65',
                 appBorderColor: '#DCEDC8', appIconPrimary: '#689F38', appIconActive: '#558B2F', appIconStatic: '#AED581',
                 appUserMsgBg: 'linear-gradient(135deg, #9CCC65, #7CB342)', appBotMsgBg: '#F1F8E9',
-                appLogoStop1: '#AED581', appLogoStop2: '#DCE775', appLogoStop3: '#8BC34A', appLogoGlowColor: '#C5E1A5',
+                appLogoStop1: '#22ff00', appLogoStop2: '#00ff80', appLogoStop3: '#22ff00', appLogoGlowColor: '#C5E1A5',
                 appWaveColor: 'rgba(104, 159, 56, 0.08)', appGreetingGrad: 'linear-gradient(120deg, #689F38, #558B2F)'
             },
             dark: {
-                appBodyBg: '#0F2212', appBgPrimary: '#1B311F', appBgSecondary: '#254028', appBgTertiary: '#355438',
+                appBodyBg: '#031e9a', appBgPrimary: '#1B311F', appBgSecondary: '#254028', appBgTertiary: '#355438',
                 appTextPrimary: '#E8F5E9', appTextSecondary: '#C8E6C9', appTextPlaceholder: '#A5D6A7',
-                appBorderColor: '#436846', appIconPrimary: '#AED581', appIconActive: '#CCFF90', appIconStatic: '#C5E1A5',
+                appBorderColor: '#436846', appIconPrimary: '#b4f8aa', appIconActive: '#70ff5a', appIconStatic: '#70ff5a',
                 appUserMsgBg: 'linear-gradient(135deg, #00ff1c, #33691E)', appBotMsgBg: '#254028',
                 appLogoStop1: '#AED581', appLogoStop2: '#9CCC65', appLogoStop3: '#CCFF90', appLogoGlowColor: '#CCFF90',
                 appWaveColor: 'rgba(174, 213, 129, 0.06)', appGreetingGrad: 'linear-gradient(120deg, #AED581, #CCFF90)'
             },
-            preview: { bg: '#1B311F', bubble: 'linear-gradient(135deg, #00ff1c, #33691E)', accent1: '#89ff00', accent2: '#66bd00' }
+            preview: { bg: 'rgb(0 88 16 / 42%)', bubble: 'linear-gradient(135deg, #00ff1c, #33691E)', accent1: '#89ff00', accent2: '#66bd00' }
         },
     ];
 
@@ -4150,19 +4166,22 @@ text-align:center;
 
         const header = document.createElement('div');
         header.className = 'galvan-notice-list-view-header';
-        header.textContent = `Galvan UI 8.5`;
+        header.textContent = `Galvan UI 9`;
         noticesView.appendChild(header);
 
         const noticeGroup = document.createElement('div');
         noticeGroup.classList.add('galvan-notice-version-group');
         noticeGroup.innerHTML = `
-            <h3>(Major Update)</h3>
+            <h3>New Update</h3>
+            <h3>✔ Completed</h3>
             <ul>
-                <li><strong>New Liquid Animations:</strong> Introducting a new liquid animation with advanced customisations to make your UI your Way.</li>
-                <li><strong>Dynamic Design:</strong> Worked on a more personalised liquid glass way search and command bar that looook's awesome</li>
-                <li><strong>Enhanced Lock Screen:</strong> The PIN lock screen now features a more elegant, fluid, and optimized liquid glass animations.</li>
-                <li><strong>Liquid inspired Histoy and more:</strong>Liquid glass added new ui and personalised look in the new history panel.</li>
-                <li><strong>Great! Optimizations:</strong> Improved scrolling and animation performance across the app for a slicker experience and introduced smoooothy way to use with new glass animations.</li>
+                <li><strong>New Liquid Glass:</strong> Introducing a completely new upgrade a <strong>Liquid Glass</strong> which behaves like a glass and is far <strong>better than a traditional blur </strong>it is a new design language in any websites history</li>
+                <li><strong>Dynamic Design:</strong> Worked on a more personalised design to take your experience next level by making it more polished and design freindly and ya Using Ai with a future freindly design</li>
+                <li><strong>Enhanced Security:</strong>A very poweful security has been added in the system that makes it more secure.</li>
+                <li><strong>Liquid inspired Histoy and more:</strong>Liquid glass has been added in the history and notice panel, to give more peronalised and aniamted veiw than the previous few updates.</li>
+                <li><strong>Great! Optimizations:</strong> Improved scrolling and animation performance across the app for a sleeker experience and introduced smoooothy way to use with new glass animations.</li>
+                <li><strong>Finally stable:</strong>After a lots of work we've finally created a super stable and glitch free ui for you and we will constanty update the security,after each week.</li>
+                <li><strong>Security version:  </strong>9.1.7</li><li><strong>Update Completed:  </strong><strong>Size:</strong>  82 Mb</li>
             </ul>`;
         noticesView.appendChild(noticeGroup);
     };
@@ -4249,7 +4268,7 @@ text-align:center;
         }
         dotsPulse.style.display = 'inline-flex'; 
 
-        const stages = [ "Analyzing...", "Thinking...", "Consulting...", "Processing...", "Formulating...", "Cross-referencing...", "Evaluating...", "Refining...", "Engaging...", "Synthesizing...", "Verifying...", "Constructing...", "Searching...", "Working...", "Deep diving...", "Unpacking...", "Exploring...", "Considering...", "Gathering...", "Compiling...", "Structuring...", "Checking...", "Perfecting...", "Just a moment...", "Deducing...", "Calculating...", "Reasoning...", "Connecting...", "Digging...", "Uncovering...", "Crafting...", "Let me think...", "Deliberating...", "Investigating...", "Probing...", "Examining...", "Sifting...", "Concentrating...", "Focusing...", "Accessing models...", "Querying algorithms...", "Applying power...", "One moment...", "Reflecting...", "Developing...", "Brewing ideas...", "Gears turning...", "Seeking outcome...", "Finalizing...", "Preparing...", "Almost there..." ];
+        const stages = [ "Analyzing...", "Thinking...", "Thinking...", "Thinking...", "Thinking...", "Thinking...", "Thinking...", "Thinking...", "Thinking...", "Thinking...", "Thinking...", "Thinking...", "Thinking...", "Thinking...", "Thinking...", "Working...","Working...","Working...","Working...","Working...","Working...","Working...","Working...", "Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there...","Almost there..." ];
         let stageIndex = Math.floor(Math.random() * stages.length);
         
         let stageTextContainer = textElement.querySelector('.galvan-thinking-stage-text');
