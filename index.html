@@ -57,15 +57,15 @@
 
         /* [NEW] Galvan Default Palette (Light) */
         --galvan-body-bg-light: #F4F7FA;
-        --galvan-bg-primary-light: #FFFFFF;
+        --galvan-bg-primary-light: #ffffff00;
         --galvan-bg-secondary-light: #F8F9FC;
         --galvan-bg-tertiary-light: #EFF2F7;
         --galvan-text-primary-light: #111827;
         --galvan-text-secondary-light: #000000;
         --galvan-text-placeholder-light: #000000;
         --galvan-border-color-light: #E5E7EB;
-        --galvan-icon-primary-light: #2563EB;
-        --galvan-icon-active-light: #1D4ED8;
+        --galvan-icon-primary-light: #0051ff;
+        --galvan-icon-active-light: #0044ff;
         --galvan-icon-static-light: #6B7280;
         --galvan-user-msg-bg-light: linear-gradient(135deg, #0061ff59, #2563EB);
         --galvan-bot-msg-bg-light: #f3f4f64d;
@@ -73,8 +73,8 @@
         --galvan-logo-stop-2-light: #06a5c5;
         --galvan-logo-stop-3-light: #34d334;
         --galvan-logo-glow-color-light: #60fa9e;
-        --galvan-wave-color-light: rgba(59, 130, 246, 0.08);
-        --galvan-logo-blur-grad-light: radial-gradient(circle at 20% 80%, hsla(129, 100%, 50%, 0.727), transparent 45%), radial-gradient(circle at 80% 30%, hsla(77, 100%, 50%, 0.848), transparent 45%);
+        --galvan-wave-color-light: rgba(59, 131, 246, 0.193);
+        --galvan-logo-blur-grad-light: radial-gradient(circle at 20% 80%, hsla(212, 100%, 50%, 0.727), transparent 45%), radial-gradient(circle at 80% 30%, hsla(77, 100%, 50%, 0.848), transparent 45%);
         --galvan-greeting-grad-light: linear-gradient(120deg, #1D4ED8, #3B82F6);
 
         /* [NEW] Galvan Default Palette (Dark) */
@@ -380,7 +380,7 @@
         z-index: 0;
         pointer-events: none;
         will-change: opacity, filter, transform, background-image;
-        transition: opacity 1.2s var(--ease-smoother), background-image 0.1s linear, filter 1s var(--ease-smoother);
+        transition: opacity 3s var(--ease-smoother), background-image 0.1s linear, filter 1s var(--ease-smoother);
     }
 
     .galvan-chat-background-blur { 
@@ -410,7 +410,7 @@
     body.user-bg-active .galvan-chat-background-blur { opacity: 0 !important; transition-delay: 0s !important; } 
     body.user-bg-active .galvan-user-image-background-blur { opacity:1.2; } 
     body:not(.light-mode).user-bg-active .galvan-user-image-background-blur { 
-        opacity: 0.6; 
+        opacity: 0.75; 
         backdrop-filter: blur(5px) url(#liquid-refraction);
             -webkit-backdrop-filter: blur(5px) url(#liquid-refraction);
         filter: blur(calc(var(--current-background-main-blur-amount-actual) * var(--galvan-blur-intensity-multiplier) * 1.5)) ; 
@@ -434,6 +434,9 @@
     /*working on a wave*/
     .galvan-wave {
         background: var(--current-wave-color); 
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(5px) url(#liquid-refraction);
+        -webkit-backdrop-filter: blur(5px) url(#liquid-refraction);
         border-radius: 1000% 1000% 0 0;
         position: absolute; 
         width: 200%;
@@ -618,7 +621,7 @@ body.chats-active .galvan-vv-structure-container {
         opacity: 0; visibility: hidden; pointer-events: none;
     }
     .galvan-vv-control-btn.visible { opacity: 1; visibility: visible; transform: scale(1); pointer-events: auto; }
-    .galvan-vv-control-btn:hover {transform:scale(0.8); }
+    .galvan-vv-control-btn:hover {transform:scale(0.8);background:rgba(7, 114, 255, 0.489) }
     .galvan-vv-control-btn svg { width: 100%; height: 100%; }
     #vvSaveBtn { top: -5px; right: -5px; }
     #vvRemoveBtn { bottom: -4px; right: -6px;
@@ -628,7 +631,7 @@ body.chats-active .galvan-vv-structure-container {
       backdrop-filter: blur(5px) url(#liquid-refraction);
       -webkit-backdrop-filter: blur(5px) url(#liquid-refraction);
       color: white; }
-    #vvRemoveBtn:hover { background-color: var(--current-error-text);   transform:scale(0.8);}
+    #vvRemoveBtn:hover {background:rgba(255, 7, 7, 0.434);  transform:scale(0.8);}
     body.chats-active .galvan-vv-control-btn, body.command-bar-expanded .galvan-vv-control-btn {
         width: 24px; height: 24px; padding: 4px; top: -3px; right: -3px; 
     }
@@ -806,6 +809,10 @@ body.chats-active .galvan-vv-structure-container {
   text-align:center;
   order: 2;
   flex-grow: 1;
+  transition: background-color 0.5s, border-color 0.5s, box-shadow 0.5s, transform 0.5s var(--ease-spring-gentle);
+}
+.prompt-input:hover{
+    transform:scale(0.8);
 }
 .prompt-input::placeholder { color: var(--current-text-secondary); }
 .galvan-prompt-wrapper .prompt-btn {
@@ -827,7 +834,7 @@ body.chats-active .galvan-vv-structure-container {
        transition: background-color 0.5s, border-color 0.5s, box-shadow 0.5s, transform 0.5s var(--ease-spring-gentle);
 }
 .galvan-prompt-wrapper .prompt-btn:active:not(:disabled) {
-    transform: scale(0.72);
+    transform: scale(0.42);
 }
 .galvan-prompt-wrapper .prompt-btn svg {
 width: 20px; height: 20px;
@@ -868,8 +875,11 @@ width: 20px; height: 20px;
     opacity: 1;
     pointer-events: auto;
 }
+#send-btn:hover {
+    transform:scale(0.5);
+}
 #send-btn:hover:not(:disabled) {
-    transform: scale(1.1);
+    transform: scale(0.5);
     filter: brightness(1.15);
 }
 #send-btn.stop-active {
@@ -1576,8 +1586,6 @@ padding: 14px 18px; border-radius: 22px;
     justify-content: center;
     align-items: flex-end;
     background-color: rgba(0, 0, 0, 0); 
-    backdrop-filter: blur(5px); 
-    -webkit-backdrop-filter: blur(5px);
     transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);  /*fluid animation */ 
     opacity: 0;
     visibility: hidden;
@@ -1637,7 +1645,7 @@ padding: 14px 18px; border-radius: 22px;
     cursor:pointer;
 }
 .galvan-bottom-sheet-header:hover {
-    transform:scale(0.9);
+    transform:scale(0.95);
 }
 .galvan-bottom-sheet-title {
     font-size: 1.25rem;
@@ -1648,8 +1656,10 @@ padding: 14px 18px; border-radius: 22px;
     position: absolute;
     top: 22px;
     right: 14px;
-    background: var(--current-bg-tertiary);
-    border: none;
+    background: rgba(255, 255, 255, 0.05);
+    border:none;
+    backdrop-filter: blur(5px) url(#liquid-refraction);
+    -webkit-backdrop-filter: blur(5px) url(#liquid-refraction); 
     border-radius: 50%;
     width: 32px; height: 32px;
     color: var(--current-text-secondary);
@@ -1658,8 +1668,7 @@ padding: 14px 18px; border-radius: 22px;
     transition: transform 0.25s var(--ease-out-quint), background-color 0.25s;
 }
 .galvan-bottom-sheet-close-btn:hover {
-    background-color: var(--current-border-color);
-    transform: scale(0.7);
+    transform: scale(0.8);
 }
 .galvan-bottom-sheet-close-btn:active {
     transform: scale(0.9);
@@ -1707,8 +1716,13 @@ padding: 14px 18px; border-radius: 22px;
 
 /* **NEW** Selected option style */
 .galvan-bottom-sheet-option.selected {
-    background-color: var(--current-icon-primary);
-    color: var(--app-bg-primary-light);
+    background: var(--current-bot-msg-bg);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 3 8px 32px rgba(31, 38, 135, 0.242);
+    transition: background-color 0.5s, border-color 0.5s, box-shadow 0.5s, transform 0.5s;
+    backdrop-filter: blur(2px) url(#liquid-refraction);
+    -webkit-backdrop-filter: blur(2px) url(#liquid-refraction);             
+    color: var(--current-text-secondary);
     font-weight: 600;
 }
 
@@ -1790,7 +1804,7 @@ gap: 12px;
 cursor: pointer; /* This makes the entire item clickable */
 }
 .galvan-history-item:hover { 
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0);
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
     backdrop-filter: blur(5px) url(#liquid-refraction);
@@ -1845,10 +1859,10 @@ cursor: pointer; /* This makes the entire item clickable */
         border-radius: 50px;
         position: sticky;
         top: -3px; /* Stick just below the top padding */
-        background: rgba(255, 255, 255, 0.114);
-        border: 1px solid rgb(255, 255, 255);
-        backdrop-filter: blur(2px) url(#liquid-refraction);
-        -webkit-backdrop-filter: blur(2px) url(#liquid-refraction);
+        background: rgba(255, 255, 255, 0);
+        border: 3px solid rgba(255, 255, 255, 0.147);
+        backdrop-filter: blur(5px) url(#liquid-refraction);
+        -webkit-backdrop-filter: blur(5px) url(#liquid-refraction);
         text-align:center;           
         border:var(--current-text-secondary);
         margin-bottom:10px;
@@ -1876,8 +1890,8 @@ cursor: pointer; /* This makes the entire item clickable */
         cursor: pointer;
     }
     .galvan-history-item:hover { 
-        background-color: var(--current-history-item-hover-bg);
-        border-color: color-mix(in srgb, var(--current-icon-primary) 30%, transparent);
+        background-color: rgba(255, 255, 255, 0.086);
+        border-color:none;
         box-shadow: 0 6px 15px -5px var(--current-shadow-strong);
         transform:scale(0.9);
     }
@@ -2287,8 +2301,7 @@ cursor: pointer; /* This makes the entire item clickable */
     /*new liquid glass based advanced resetting ui*/
 
     #galvan-reset-overlay {
-        position: fixed; inset: 0; 
-        backdrop-filter: blur(2px);                  
+        position: fixed; inset: 0;                 
         color: var(--current-text-primary); 
         z-index: 9999; 
         display: flex; flex-direction: column; align-items: center; justify-content: center; 
@@ -2311,14 +2324,14 @@ cursor: pointer; /* This makes the entire item clickable */
             text-align: center;
     }
      #galvan-reset-overlay .reset-content:hover {
-        transform:scale(0.9);
+        transform:scale(0.8);
      }
     #galvan-reset-overlay .spinner {
         width: 60px; height: 60px; 
         border: 5px solid var(--current-border-color);
         border-top-color: var(--current-icon-active);
         border-radius: 50%;
-        animation: spin 3s linear infinite;
+        animation: spin 1s linear infinite;
         margin-bottom: 25px;
     }
     #galvan-reset-overlay .reset-text {
@@ -2326,7 +2339,7 @@ cursor: pointer; /* This makes the entire item clickable */
         font-weight: 200;
         color: var(--current-text-primary);
     }
-    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes spin { to { transform: rotate(-360deg); } }
 
     /*liquid glass reset system ends up here*/
 
@@ -2651,7 +2664,7 @@ cursor: pointer; /* This makes the entire item clickable */
 <svg style="position:absolute; width:0; height:0">
   <filter id="liquid-refraction">
     <feImage xlink:href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJ4R3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMwMDgwODAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNGRjgwODAiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0ieUdyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjODAwMDgwIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjODBGRjgwIi8+PC9saW5lYXJHcmFkaWVudD48ZmlsdGVyIGlkPSJibHVyLW1hc2stZmlsdGVyIj48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxMCIvPjwvZmlsdGVyPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3hHcmFkKSIvPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjeUdyYWQpIiBzdHlsZT0ibWl4LWJsZW5kLW1v%0D%0AZGU6IHNjcmVlbjsiLz48cmVjdCB4PSIxMCIgeT0iMTAiIHdpZHRoPSIxODAiIGhlaWdodD0iMTgwIiByeD0iMjUiIHJ5PSIyNSIgZmlsbD0iIzgwODA4MCIgZmlsdGVyPSJ1cmwoI2JsdXItbWFzay1maWx0ZXIpIi8+PC9zdmc+" 
-             x="0" y="0" width="100%" height="50%" result="dispMap" />
+             x="0" y="0" width="100%" height="100%" result="dispMap" />
     <feDisplacementMap in="SourceGraphic" in2="dispMap" scale="85" xChannelSelector="N" yChannelSelector="H" />
   </filter>
 </svg>
@@ -2944,7 +2957,7 @@ cursor: pointer; /* This makes the entire item clickable */
         {
             id: 'cosmic_latte', name: '',
             light: {
-                appBodyBg: '#f8dfdf', appBgPrimary: '#f6e4e4', appBgSecondary: '#ff0000', appBgTertiary: '#ffffff',
+                appBodyBg: '#f8dfdf', appBgPrimary: '', appBgSecondary: '#ff0000', appBgTertiary: '#ffffff',
                 appTextPrimary: 'e61111', appTextSecondary: '#795548', appTextPlaceholder: '#A1887F',
                appBorderColor: '#54504D', appIconPrimary: '#ff2a00', appIconActive: '#ff0000', appIconStatic: '#ff2a00',
                 appUserMsgBg: 'linear-gradient(135deg, #ff4d4d61, #ff0000eb)', appBotMsgBg: '#fffcfa85',
@@ -2952,7 +2965,7 @@ cursor: pointer; /* This makes the entire item clickable */
                 appWaveColor: 'rgba(255, 152, 0, 0.07)', appGreetingGrad: 'linear-gradient(120deg, #FF9800, #E65100)'
             },
             dark: {
-                appBodyBg: '', appBgPrimary: '#05125e', appBgSecondary: '#3E3A36', appBgTertiary: '#4E4A45',
+                appBodyBg: '', appBgPrimary: '', appBgSecondary: '#3E3A36', appBgTertiary: '#4E4A45',
                 appTextPrimary: '#ECEFF1', appTextSecondary: '#CFD8DC', appTextPlaceholder: '#90A4AE',
                 appBorderColor: '#54504D', appIconPrimary: '#FFCC80', appIconActive: '#FFAB40', appIconStatic: '#B0BEC5',
                 appUserMsgBg: 'linear-gradient(135deg, #ffa72675, #F57C00)', appBotMsgBg: '#3e3a3680',
@@ -2964,7 +2977,7 @@ cursor: pointer; /* This makes the entire item clickable */
         {
             id: 'oceanic_deep', name: '',
             light: {
-                appBodyBg: '#E1F5FE', appBgPrimary: '#FFFFFF', appBgSecondary: '#F0F8FF', appBgTertiary: '#E0F2F1',
+                appBodyBg: '#E1F5FE', appBgPrimary: '', appBgSecondary: '#F0F8FF', appBgTertiary: '#E0F2F1',
                 appTextPrimary: '#004D40', appTextSecondary: '#00695C', appTextPlaceholder: '#4DB6AC',
                 appBorderColor: '#B2DFDB', appIconPrimary: '#00838F', appIconActive: '#006064', appIconStatic: '#80DEEA',
                 appUserMsgBg: 'linear-gradient(135deg, #9ccc658f, #7CB342)', appBotMsgBg: '#b9e2ff75',
@@ -2972,7 +2985,7 @@ cursor: pointer; /* This makes the entire item clickable */
                 appWaveColor: 'rgba(0, 131, 143, 0.09)', appGreetingGrad: 'linear-gradient(120deg, #00838F, #006064)'
             },
             dark: {
-                appBodyBg: '#01192D', appBgPrimary: '#012A4A', appBgSecondary: '#013A63', appBgTertiary: '#024C7D',
+                appBodyBg: '#01192D', appBgPrimary: '', appBgSecondary: '#013A63', appBgTertiary: '#024C7D',
                 appTextPrimary: '#E0F7FA', appTextSecondary: '#B2EBF2', appTextPlaceholder: '#80DEEA',
                 appBorderColor: '#035E98', appIconPrimary: '#4DD0E1', appIconActive: '#80DEEA', appIconStatic: '#B2EBF2',
                 appUserMsgBg: 'linear-gradient(135deg, #4f98b86b, #0277BD)', appBotMsgBg: '#013a6375',
@@ -2984,7 +2997,7 @@ cursor: pointer; /* This makes the entire item clickable */
         {
             id: 'evergreen', name: '',
             light: {
-                appBodyBg: '#d6ffcf', appBgPrimary: '#FFFFFF', appBgSecondary: '#22ff00', appBgTertiary: '#22ff00',
+                appBodyBg: '#d6ffcf', appBgPrimary: '', appBgSecondary: '#22ff00', appBgTertiary: '#22ff00',
                 appTextPrimary: '#33691E', appTextSecondary: '#558B2F', appTextPlaceholder: '#9CCC65',
                 appBorderColor: '#DCEDC8', appIconPrimary: '#689F38', appIconActive: '#558B2F', appIconStatic: '#AED581',
                 appUserMsgBg: 'linear-gradient(135deg, #9ccc6570, #7CB342)', appBotMsgBg: '#b9ffbe75',
@@ -2992,11 +3005,11 @@ cursor: pointer; /* This makes the entire item clickable */
                 appWaveColor: 'rgba(104, 159, 56, 0.08)', appGreetingGrad: 'linear-gradient(120deg, #689F38, #558B2F)'
             },
             dark: {
-                appBodyBg: '#031e9a', appBgPrimary: '#1B311F', appBgSecondary: '#254028', appBgTertiary: '#355438',
+                appBodyBg: '#031e9a', appBgPrimary: '', appBgSecondary: '#254028', appBgTertiary: '#355438',
                 appTextPrimary: '#E8F5E9', appTextSecondary: '#C8E6C9', appTextPlaceholder: '#A5D6A7',
                 appBorderColor: '#436846', appIconPrimary: '#b4f8aa', appIconActive: '#70ff5a', appIconStatic: '#70ff5a',
                 appUserMsgBg: 'linear-gradient(135deg, #00ff1c75, #33691E)', appBotMsgBg: '#005b066b',
-                appLogoStop1: '#AED581', appLogoStop2: '#9CCC65', appLogoStop3: '#CCFF90', appLogoGlowColor: '#CCFF90',
+                appLogoStop1: '#00e511', appLogoStop2: '#7eff2f', appLogoStop3: '#00db18', appLogoGlowColor: '#CCFF90',
                 appWaveColor: 'rgba(174, 213, 129, 0.06)', appGreetingGrad: 'linear-gradient(120deg, #AED581, #CCFF90)'
             },
             preview: { bg: 'rgb(0 88 16 / 42%)', bubble: 'linear-gradient(135deg, #00ff1c, #33691E)', accent1: '#89ff00', accent2: '#66bd00' }
@@ -4195,7 +4208,7 @@ cursor: pointer; /* This makes the entire item clickable */
 
             resetOverlay.classList.remove('show');
             showTemporaryToast("Done");
-        }, 1500); 
+        }, 10500); 
     };
 
     if (settingResetAllBtn) {
